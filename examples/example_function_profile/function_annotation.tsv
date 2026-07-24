@@ -1,0 +1,41 @@
+Feature_ID	COG_category	COG_category_description	KEGG_ko	Description
+gene_0001	S	Function unknown	K07019	putative hydrolase
+gene_0002	C	Energy production and conversion	K00169	pyruvate ferredoxin oxidoreductase
+gene_0003			K01810	glucose-6-phosphate isomerase
+gene_0004	J	Translation, ribosomal structure and biogenesis	K02946	ribosomal protein S3
+gene_0005	E	Amino acid transport and metabolism	K00812	aspartate aminotransferase
+gene_0006	C	Energy production and conversion	K00169	pyruvate ferredoxin oxidoreductase
+gene_0007			K02946	ribosomal protein S3
+gene_0008	M	Cell wall/membrane/envelope biogenesis	K05515	penicillin-binding protein
+gene_0009	P	Inorganic ion transport and metabolism	K02040	phosphate transport system
+gene_0010	J	Translation, ribosomal structure and biogenesis	K02887	ribosomal protein L2
+gene_0011	J	Translation, ribosomal structure and biogenesis	K02946	ribosomal protein S3
+gene_0012	G	Carbohydrate transport and metabolism	K00844	hexokinase
+gene_0013	C	Energy production and conversion	K00169	pyruvate ferredoxin oxidoreductase
+gene_0014	S	Function unknown	K09159	uncharacterized protein
+gene_0015	E	Amino acid transport and metabolism	K00812	aspartate aminotransferase
+gene_0016	P	Inorganic ion transport and metabolism	K02015	iron complex outer membrane receptor
+gene_0017	M	Cell wall/membrane/envelope biogenesis	K01921	D-alanine-D-alanine ligase
+gene_0018	J	Translation, ribosomal structure and biogenesis	K02887	ribosomal protein L2
+gene_0019	G	Carbohydrate transport and metabolism	K00844	hexokinase
+gene_0020	M	Cell wall/membrane/envelope biogenesis	K05515	penicillin-binding protein
+gene_0021	G	Carbohydrate transport and metabolism	K01810	glucose-6-phosphate isomerase
+gene_0022	J	Translation, ribosomal structure and biogenesis	K02946	ribosomal protein S3
+gene_0023	J	Translation, ribosomal structure and biogenesis	K02946	ribosomal protein S3
+gene_0024			K00812	aspartate aminotransferase
+gene_0025	G	Carbohydrate transport and metabolism	K00844	hexokinase
+gene_0026	J	Translation, ribosomal structure and biogenesis	K02887	ribosomal protein L2
+gene_0027			K02015	iron complex outer membrane receptor
+gene_0028	P	Inorganic ion transport and metabolism	K02040	phosphate transport system
+gene_0029	M	Cell wall/membrane/envelope biogenesis	K01921	D-alanine-D-alanine ligase
+gene_0030	S	Function unknown	K09159	uncharacterized protein
+gene_0031	P	Inorganic ion transport and metabolism	K02040	phosphate transport system
+gene_0032	G	Carbohydrate transport and metabolism	K01810	glucose-6-phosphate isomerase
+gene_0033			K00844	hexokinase
+gene_0034	E	Amino acid transport and metabolism	K01915	glutamine synthetase
+gene_0035	M	Cell wall/membrane/envelope biogenesis	K05515	penicillin-binding protein
+gene_0036	S	Function unknown	K09159	uncharacterized protein
+gene_0037	P	Inorganic ion transport and metabolism	K02040	phosphate transport system
+gene_0038	S	Function unknown	K09159	uncharacterized protein
+gene_0039	J	Translation, ribosomal structure and biogenesis	K02887	ribosomal protein L2
+gene_0040	G	Carbohydrate transport and metabolism	K01810	glucose-6-phosphate isomerase

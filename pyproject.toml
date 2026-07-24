@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microplotpy"
+version = "0.1.0"
+description = "Literature-grounded microbial ecology plots (barplot, heatmap, bubbleplot, diversity) from tidy input, with an upload-time data validator."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.7", "seaborn>=0.13", "scipy>=1.11", "squarify>=0.4", "statsmodels>=0.14"]
+diversity = ["scipy>=1.11", "scikit-learn>=1.9"]
+app = ["shiny>=1.0"]
+dev = ["pytest>=7.4", "playwright>=1.40"]
+docs = ["mkdocs>=1.5", "mkdocs-material>=9.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
