@@ -11,9 +11,7 @@ engine (matplotlib/seaborn here vs ggplot2 on the R side).
 See [`data-format.md`](data-format.md) for the required input files. Full
 documentation (one page per plot: input spec, parameters, literature
 grounding) is an [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
-site built from `docs/` — run `mkdocs serve` for a live preview, or
-`mkdocs build` to render static HTML into `site/` (e.g. for GitHub Pages
-once this repo is published).
+site built from `docs/`, served via GitHub Pages once enabled for this repo.
 
 ## Plot catalog
 
@@ -34,17 +32,42 @@ supports abundance/prevalence filtering via `filter_taxa()`, and returns a
 plain `matplotlib.Figure` you can keep mutating (`fig.axes[0].set_title(...)`
 etc.) — nothing here is a static image.
 
-## Install (dev)
+## Install
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e ".[plots,diversity,app,dev,docs]"
-pytest
+pip install "microplotpy[plots,diversity] @ git+https://github.com/l-gallucci/microplotPy.git"
+```
+
+Drop `[plots,diversity]` for the bare library (validator only, no plotting
+deps). Not yet on PyPI — once published there, this becomes a plain
+`pip install microplotpy[plots,diversity]`.
+
+## Quick usage
+
+Point the loader at your own tidy files (see
+[`data-format.md`](data-format.md) for the required columns):
+
+```python
+from microplotpy import load, validate
+from microplotpy.plots import taxa_barplot
+
+data = load("feature_table.tsv", "taxonomy.tsv", "metadata.tsv")
+report = validate(data, gradient_column="Depth_m", group_column="Group")
+print(report.is_valid, report.errors, report.warnings)
+
+fig = taxa_barplot(data, rank="Genus", group_rank="Phylum", top_n=10)
+fig.savefig("barplot.png", dpi=300, bbox_inches="tight")
 ```
 
 ## Shiny app
 
+The app (`app/app.py`) isn't packaged for `pip install` yet — it needs the
+repo cloned:
+
 ```bash
+git clone https://github.com/l-gallucci/microplotPy.git && cd microplotPy
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e ".[plots,diversity,app]"
 shiny run app/app.py
 ```
 
@@ -53,24 +76,26 @@ upload the required file(s) → validator shows errors/warnings inline →
 pick a plot type and parameters → view/download the plot as PNG or SVG at
 a width/height you choose.
 
-## Quick usage (library)
+## Contributing / development
+
+```bash
+git clone https://github.com/l-gallucci/microplotPy.git && cd microplotPy
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e ".[plots,diversity,app,dev,docs]"
+pytest
+```
+
+`examples/` ships several bundled datasets, including `example_valid/` (used
+in the docs) and `example_broken_*/` sets that each trip a different
+validator check (ID mismatches, negative counts, missing taxonomy columns,
+duplicate feature IDs):
 
 ```python
-from microplotpy import load, validate
-from microplotpy.plots import taxa_barplot
-
 data = load(
     "examples/example_valid/feature_table.tsv",
     "examples/example_valid/taxonomy.tsv",
     "examples/example_valid/metadata.tsv",
 )
-report = validate(data, gradient_column="Depth_m", group_column="Group")
-print(report.is_valid, report.errors, report.warnings)
-
-fig = taxa_barplot(data, rank="Genus", group_rank="Phylum", top_n=10)
-fig.savefig("barplot.png", dpi=300, bbox_inches="tight")
 ```
 
-Try validation against `examples/example_broken_*` to see what it catches
-(ID mismatches, negative counts, missing taxonomy columns, duplicate
-feature IDs).
+To rebuild the documentation site after a change: `mkdocs build`.
