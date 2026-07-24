@@ -4,9 +4,9 @@ Literature-grounded, publication-ready microbial ecology plots from plain
 tidy input (feature table + taxonomy + metadata), with an upload-time
 validator that reports exactly what is wrong with your data, and a
 Shiny-for-Python app for interactive use. Python counterpart to the R
-package [`microplotr`](../microplotr) — same input format, same validator
-rules, same plot catalog, different plotting engine (matplotlib/seaborn
-here vs ggplot2 on the R side).
+package [`microplotr`](https://github.com/l-gallucci/microplotR) — same
+input format, same validator rules, same plot catalog, different plotting
+engine (matplotlib/seaborn here vs ggplot2 on the R side).
 
 See [`data-format.md`](data-format.md) for the required input files. Full
 documentation (one page per plot: input spec, parameters, literature
